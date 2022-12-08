@@ -80,7 +80,7 @@ public:
                 auto &list = adjacency_list_[vertex->ID];
                 for (auto itr = list.begin (); itr != list.end (); itr++) {
                     Vertex *a = *itr;
-                    if (vertex->ID == vertex2)
+                    if (a->ID == vertex2)
                         return a->distance;
                 }
             }
@@ -103,9 +103,9 @@ public:
             std::cout << vertex1 << " " << vertex2 << ": ";
             float edge_weight = TestingConnection (vertex1, vertex2);
             if (edge_weight == -1.0)
-                std::cout << "Not Connected" << std::endl;
+                std::cout << "not_connected" << std::endl;
             else
-                std::cout << "Connected, weight of edge is " << edge_weight << std::endl;
+                std::cout << "connected " << edge_weight << std::endl;
         }
         query_data.close ();
     }

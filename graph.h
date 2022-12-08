@@ -1,7 +1,10 @@
+//Stanley Fung
+//Program includes the functions to parse the given text files and to test if the graph is properly represented by an adjacency list. Program also contains a function to find the shortest path from starting vertex to all the vertices, along with a helper function.
 #ifndef STUDENT_GRAPH
 #define STUDENT_GRAPH
 
 #include "binary_heap.h"
+#include "vertices.h"
 #include <queue>
 #include <vector>
 #include <iostream>
@@ -11,7 +14,7 @@
 #include <sstream>
 #include <stack>
 #include <string>
-#include "vertices.h"
+
 
 // This file is for your graph implementation.
 // Add everything you need in between the "ifndef and "endif" statements.
@@ -112,7 +115,7 @@ public:
     
     // Dijkstras algorithm, starting_id is the id of the vertex you are starting, function finds the shortest path to all other nodes from the starting vertex
     void ShortestPath (int starting_id) {
-        vertex_map_[starting_id]->distance = 0;
+        vertex_map_[starting_id]->distance = 0.0;
         for (auto vertex : vertices_)
             sorted_vertices_.push (vertex);
         while (sorted_vertices_.empty () != true) {
@@ -145,10 +148,10 @@ public:
             // outputs backwards since we recorded it backwards
             for (size_t i = pathway.size()-1; i > 0; i--)
                 std::cout << pathway[i] << " ";
-            std::cout << "(Cost: " << cost << ")" << std::endl;
+            std::cout << "cost: " << cost << std::endl;
         }
     }
-    
+    //Destructor to deallocate memory used by the functions. 
     ~Graph()
     {
         for(auto &vertex : vertices_)

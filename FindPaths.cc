@@ -1,3 +1,6 @@
+//Stanley Fung
+//Program tests if the functions that uses Dijkstra’s Algorithm to find the shortest path from a starting vertex to all vertices, is implemented correctly.
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -6,6 +9,7 @@
 
 using namespace std;
 
+//Driver for finding shortest path via Dijkstra's algorithm.
 int pathfindDriver(int argc, char **argv) {
     
     // Begin your code here. Feel free to add any helper functions or classes you need,

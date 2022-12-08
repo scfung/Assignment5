@@ -1,3 +1,7 @@
+//Stanley Fung
+//Program uses functions from the graph.h file to test if the graph was represented properly in the adjacency list.
+
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -6,6 +10,7 @@
 
 using namespace std;
 
+//Driver for testing if graph is represented correctly through an adjacency list.
 int graphTestDriver(int argc, char **argv) {
     
     // Begin your code here. Feel free to add any helper functions or classes you need,

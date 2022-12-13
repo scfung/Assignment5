@@ -32,7 +32,7 @@
 
 -ShortestPath function did not return the correct output, when the path to certain vertices is not possible.
 
--ShortestPath function did not return the correct output in the form of a float number, returned cost in an integer instead.  
+-ShortestPath function did not return the correct output in the form of a float number, returned cost in an integer instead. Used std::fixed and std::setprecision to fix this problem. 
 
 -Vertices class did not properly work as nested class within graph.h file, used another file name vertices.h and included it into the graph.h file. 
 

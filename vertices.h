@@ -1,9 +1,4 @@
-//
-//  vertices.h
-//  Assignment5
-//
-//  Created by Stanley Fung on 12/7/22.
-//
+// Stanley Fung
 // Used to deal with vertices and their properties, which include edge weights, identifying the vertex and helping determine the shortest path. 
 #ifndef vertices_h
 #define vertices_h

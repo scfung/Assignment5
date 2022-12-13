@@ -14,6 +14,7 @@
 #include <sstream>
 #include <stack>
 #include <string>
+#include <iomanip>
 
 // This file is for your graph implementation.
 // Add everything you need in between the "ifndef and "endif" statements.
@@ -141,16 +142,22 @@ public:
             std::cout << vertex->ID << ": ";
             while (vertex->ID != starting_id) {
                 pathway.push_back (vertex->ID);
-                vertex = vertex->path; 
+                vertex = vertex->path;
             }
             pathway.push_back (starting_id);
             // outputs backwards since we recorded it backwards
-                for (size_t i = pathway.size()-1; i > 0; i--)
-                {
-                    std::cout << pathway[i] << " ";
-                }
-            cost = cost * 1.0;
-            std::cout << "cost: " << cost << std::endl;
+            for (size_t i = pathway.size()-1; i > 0; i--)
+            {
+                std::cout << std::setprecision(0) << pathway[i] << " ";
+            }
+            if(cost != numeric_limits<int>::max())
+            {
+                std::cout << std::fixed;
+                std::cout << "cost: " << std::setprecision(1) << cost << std::endl;
+            }
+            else{
+                std::cout << "not_possible" << std::endl;
+            }
         }
     }
     //Destructor to deallocate memory used by the functions. 

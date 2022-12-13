@@ -15,7 +15,6 @@
 #include <stack>
 #include <string>
 
-
 // This file is for your graph implementation.
 // Add everything you need in between the "ifndef and "endif" statements.
 // Do not put anything outside those statements
@@ -76,7 +75,7 @@ public:
         return vertices_;
     }
     
-    // Tests if there is a connection between any two vertices
+    // Tests if there is a connection between any two vertices, returns distance if there is a connection
     float TestingConnection (const int vertex1, const int vertex2) {
         for (auto vertex : vertices_) {
             if (vertex->ID == vertex1) {
@@ -146,8 +145,11 @@ public:
             }
             pathway.push_back (starting_id);
             // outputs backwards since we recorded it backwards
-            for (size_t i = pathway.size()-1; i > 0; i--)
-                std::cout << pathway[i] << " ";
+                for (size_t i = pathway.size()-1; i > 0; i--)
+                {
+                    std::cout << pathway[i] << " ";
+                }
+            cost = cost * 1.0;
             std::cout << "cost: " << cost << std::endl;
         }
     }
